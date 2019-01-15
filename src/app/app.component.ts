@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { FetchAnimes } from './store/actions/top-animes.actions'
+import { Observable } from 'rxjs'
+import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mal-ngrx-test';
+
+  topAnimes: Observable<any>
+
+  constructor(store: Store<any>) {
+    this.topAnimes = store.select('topAnimes')
+    store.dispatch(new FetchAnimes([]))
+  }
 }
