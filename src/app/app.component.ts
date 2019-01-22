@@ -1,7 +1,8 @@
 import { Component } from '@angular/core'
-import { FetchAnimes } from './store/actions/top-animes.actions'
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
+
+import { FetchAnimes } from './store/top-animes'
 
 @Component({
   selector: 'app-root',

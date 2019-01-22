@@ -4,8 +4,13 @@ import { mergeMap, map, catchError } from 'rxjs/operators'
 import { of } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 
-import { EffectHandler } from './effect-handler'
-import { FetchAnimes, ActionTypes, FetchAnimesSuccess, FetchAnimesFail } from '../actions/top-animes.actions'
+import { EffectHandler } from '../effect-handler'
+import {
+  FetchAnimes,
+  ActionTypes,
+  FetchAnimesSuccess,
+  FetchAnimesFail
+} from './actions'
 
 @Injectable()
 export class TopAnimeEffects extends EffectHandler {
